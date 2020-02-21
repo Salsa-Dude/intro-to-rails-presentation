@@ -14,24 +14,22 @@
 
 ## Intro: What is Rails 
 
-You can optionally choose to start this lecture by showing [this video](https://www.youtube.com/watch?v=9ML8PrP3A8E) of a Sinatra app being built to remind students of where they have been this week and highlight the problems that Rails is solving for them.
+Show this video [this video](https://www.youtube.com/watch?v=9ML8PrP3A8E) of a Sinatra app being built to remind students of where they have been this week and highlight the problems that Rails is solving for them.
 
-Rails was created in 2003 by David Heinemeier Hansson, while working on the code base for Basecamp, a project management tool by 37signals. David extracted Ruby on Rails and officially released it as open source code in July of 2004. Despite rapid iteration of the Rails code base throughout the years, it has stuck to three basic principles:
+So, this is where rails comes into play. Rails was created with the goal to gt rid of alot this repetition In short, with Rails you can get started with a full-stack web application by quickly creating pages and templates. This allows us (programmers) to only be focused on what really matters in our application. We no longer have to worry about setting our environment, getting all the files connected which saves us alot of time and repetition.
 
-* Ruby Programming Language
-* Model-View-Controller Architecture
-* Programmer Happiness
-
-Rails was created with the goal of increasing programmers' happiness and productivity levels. In short, with Rails you can get started with a full-stack web application by quickly creating pages, templates and even query functions.
-
-
- Rails heavily emphasizes ***"Convention over Configuration."*** This means that a programmer only needs to specify and code out the non-standard parts of a program. Even though Rails comes with its own set of tools and settings, you're certainly not limited to library of rails commands and configurations. Developers are free to configure their applications however they wish, though adopting conventions is certainly recommended.
+Rails heavily emphasizes ***"Convention over Configuration."*** This means that a programmer only needs to specify and code out the non-standard parts of a program. Even though Rails comes with its own set of tools and settings, you're certainly not limited to library of rails commands and configurations. Developers are free to configure their applications however they wish, though adopting conventions is certainly recommended.
 
  ![](https://s3-us-west-2.amazonaws.com/student-resources/uploads/lecture/Screen+Shot+2017-06-09+at+10.04.20+AM.png)
 
 #### A Look Back
 
-As we look back at the history of Rails, let's review some of the more significant releases over the years.
+Rails was created in 2003 by David Heinemeier Hansson. 
+In 2004 Rails become open source and overtime its gone through alot of iterations throughout the years but despite all the changes, Rails has always kept to the **three basic principes**
+
+* Following the Ruby Programming Language
+* Following the Model-View-Controller convention
+* Programmer Happiness
 
 * Rails 1.0 (Dec 2005) - Mostly polishing up and closing pending tickets from the first release along with the inclusion of Scriptaculous 1.5 and Prototype 1.4.
 * Rails 1.2 (Jan 2007) - REST and generation HTTP appreciation
@@ -50,24 +48,7 @@ Over the years, Rails has indeed made it easier for beginners to dive into web d
 [Built With Rails](https://skillcrush.com/2015/02/02/37-rails-sites/)
 
 
-## Demo: A blog in 10 mins (10 mins)
-
-The goal of the next few minutes is to show the power that Rails gives us – it's actually possible to create a website with a lot of the functionality you've seen in our Sinatra app – forms, links, database, and MVC structure – in less than 5 minutes. We will not detail each step for this app, but we will create a dynamic website in 5 mins by typing the following commands.
-
-I'll talk through this as I demo, and we'll come back and talk about what each of these steps are doing afterwards.
-
-```ruby
-rails new blog_app
-cd blog_app
-rails generate scaffold Post title:string content:text author:string
-rake db:migrate
-rails server
-```
-
-Now we'll head over to `localhost:3000/posts`. All of our REST actions are live!
-
-
-## Codealong: Installing Rails (5 mins)
+## Codealong: Installing Rails
 
 #### Let's install rails
 
@@ -80,8 +61,6 @@ Versions of Rails change quite rapidly, and if you leave off the "-v", you'll ju
 ```bash
   gem install rails -v=INSERT_RAILS_VERSION_HERE
 ```
-
-
 
 ## Codealong: Creating a Rails App
 
@@ -133,6 +112,13 @@ Some details about this structure:
 * `db` will contain all of your migrations
 
 We will describe the other folders in later lessons, and for the next couple of weeks, you will primarily write code inside the folders described above.
+
+
+#### Generators
+
+A primary goal of the Rails team was to make it efficient to build core application functionality. The Rails system has a number of generators that will do some of the manual work for us.
+
+
 
 #### Rails Routing vs. Sinatra Routing
 
@@ -307,3 +293,7 @@ end
 Rome wasn't built in a day and neither can someone learn Rails in a day. Keep coding and it will all come together.
 
 [Rails Guides](http://guides.rubyonrails.org/index.html)
+
+
+
+
