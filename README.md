@@ -114,9 +114,36 @@ Some details about this structure:
 We will describe the other folders in later lessons, and for the next couple of weeks, you will primarily write code inside the folders described above.
 
 
-#### Generators
+## Generators
 
 A primary goal of the Rails team was to make it efficient to build core application functionality. The Rails system has a number of generators that will do some of the manual work for us.
+
+#### Generate a model
+
+Sometimes, you will need a model but not the related controller, in this case, you will use the model generator:
+
+```
+rails g model MODEL_NAME [fields]
+```
+
+This will generate the model by itself along with the migration containing all the fields and the data types if you wrote them when you typed the console.
+
+#### Generate a migration
+
+In Sinatra you had to create your migrations by hand. As with most things in Rails, theres an generator for that.
+
+```ruby
+rails g migration AddAgeToPets age:integer
+```
+
+By following certain conventions like the one above, rails will generate a migration that specifically adds the age column to your existing pets column.
+
+```ruby
+class AddAgeToPet < ActiveRecord::Migration[5.1]
+  def change
+    add_column :pets, :age, :integer
+  end
+end
 
 
 
@@ -259,32 +286,8 @@ However, if we wanted to be more explicit or if we wanted to rendr a view templa
 
 ```
 
-#### Generate a model
 
-Sometimes, you will need a model but not the related controller, in this case, you will use the model generator:
 
-```
-rails g model MODEL_NAME [fields]
-```
-
-This will generate the model by itself along with the migration containing all the fields and the data types if you wrote them when you typed the console.
-
-#### Generate a migration
-
-In Sinatra you had to create your migrations by hand. As with most things in Rails, theres an generator for that.
-
-```ruby
-rails g migration AddAgeToPets age:integer
-```
-
-By following certain conventions like the one above, rails will generate a migration that specifically adds the age column to your existing pets column.
-
-```ruby
-class AddAgeToPet < ActiveRecord::Migration[5.1]
-  def change
-    add_column :pets, :age, :integer
-  end
-end
 
 ```
 
