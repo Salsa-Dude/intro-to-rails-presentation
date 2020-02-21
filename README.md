@@ -27,9 +27,11 @@ Rails heavily emphasizes ***"Convention over Configuration."*** This means that 
 Rails was created in 2003 by David Heinemeier Hansson. 
 In 2004 Rails become open source and overtime its gone through alot of iterations throughout the years but despite all the changes, Rails has always kept to the **three basic principes**
 
-* Following the Ruby Programming Language
-* Following the Model-View-Controller convention
-* Programmer Happiness
+**- Following the Ruby Programming Language**
+
+**- Following the Model-View-Controller convention**
+
+**- Programmer Happiness**
 
 * Rails 1.0 (Dec 2005) - Mostly polishing up and closing pending tickets from the first release along with the inclusion of Scriptaculous 1.5 and Prototype 1.4.
 * Rails 1.2 (Jan 2007) - REST and generation HTTP appreciation
@@ -70,7 +72,6 @@ For this introduction, we want to create a simple app: a petstore! The specs for
 
 * Display a list of all pets
 * Create new pets and edit existing pets
-* Delete pets
 
 Rails follow a pattern called **"convention over configuration"** - this means that by default, a Rails app expects you to follow specific patterns and folder structures. This means you need to learn these conventions, but also means that once you learn them, you save time by not having to setup a lot of the configuration you'd otherwise need to set up manually.
 
@@ -172,6 +173,20 @@ There is 3 different ways for creating a controller in Rails:
           render 'index'
 	end 
         ```
+	
+#### Create methods for a RESTful controller
+
+We've already defined what a RESTful resource is, let's see how to implement it in a rails app.
+
+As a reminder, a RESTful resource will include 7 methods:
+
+* Index
+* Show
+* New
+* Create
+* Edit
+* Update
+* Delete
 
 #### Implicit vs Explicit Rendering
 
@@ -195,21 +210,6 @@ However, if we wanted to be more explicit or if we wanted to rendr a view templa
   end
 
 ```
-
-#### Create methods for a RESTful controller
-
-We've already defined what a RESTful resource is, let's see how to implement it in a rails app.
-
-As a reminder, a RESTful resource will include 7 methods:
-
-* Index
-* Show
-* New
-* Create
-* Edit
-* Update
-* Delete
-
 
 #### Create Views
 
@@ -281,13 +281,13 @@ rails g scaffold Owner name:string age:integer
 
 Running this command will generate a lot of files, including the controller, the views, the model, and the migration. It will also update the routes file.
 
-Take a look at the controller, it has all the RESTful methods, and these methods already contain the code to query the database through the model `Pet`.
+Take a look at the controller, it has all the RESTful methods, and these methods already contain the code to query the database through the model `Owner`.
 
 We don't want all the files created with the scaffold and in practice you won't actually use it so let's delete it
 
 ```ruby
 
-rails d scaffold Pet
+rails d scaffold Owner
 
 ```
 
